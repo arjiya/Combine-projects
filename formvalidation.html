@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System</title>
+    <link rel="stylesheet" href="formvalidation.css" ></link>
+</head>
+<body>
+    <div class="container"></div>
+    <form id="form" class="form">
+        <h3>Login Form Validation</h3>
+        <div class="form-control">
+            <label for="username">Name</label>
+            <input type="text"  id="name" placeholder="Enter Username"/><br>
+            <span id="name_error"></span>
+        </div>
+ 
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" id="email"  placeholder="Enter Email"/><br>
+            <span id="email_error"></span>
+        </div>
+
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" id="password"  placeholder="Enter Password"/>
+            <button class="toggle-btn" id="togglePassword">show</button><br>
+
+            <span id="password_error"></span>
+        </div>
+
+        <div class="form-control">
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="text" id="confirmpassword"  placeholder="Enter Password"/>
+            <button class="toggle-btn" id="toggleconfirmPassword"  >show</button><br>
+            <span id="confirmpassword_error"></span>
+            <span id="confirmpassword_match"></span>
+        </div>
+
+
+        <button type="submit" class="btn">Submit</button>
+
+        <div class="popup">
+            <h2>Thank you </h2>
+            <p>Your details has been successful</p>
+            <button type="button">ok</button>
+    </form>
+    <script src="formvalidation.js"></script>
+</body>
+</html>

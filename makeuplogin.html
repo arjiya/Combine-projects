@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8b6d2; /* Light pink background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Main container for the form */
+        .main {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Form Title */
+        .main h2 {
+            font-size: 24px;
+            color: #ff69b4; /* Vibrant pink for headers */
+            margin-bottom: 20px;
+        }
+
+        /* Input fields styling */
+        .main input {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Button styling */
+        .main .btn {
+            background-color: #ff69b4; /* Vibrant pink */
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .main .btn:hover {
+            background-color: #ff1493; /* Darker pink for hover */
+        }
+
+        /* Link styling */
+        .main .link {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .main .link a {
+            color: #ff69b4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .main .link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-content h3 {
+            font-size: 20px;
+            color: #ff69b4;
+            margin-bottom: 10px;
+        }
+
+        .popup-content p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .popup button {
+            background-color: #4CAF50; /* Green button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .main {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .popup-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="form">
+        <h2>Login to Your Account</h2>
+        <form id="loginForm" action="javascript:void(0);" method="POST">
+            <input type="email" name="email" placeholder="Enter email" required>
+            <input type="password" name="password" placeholder="Enter password" required>
+            <button class="btn" type="submit">Login</button>
+        </form>
+        <p class="link">Don't have an account? <br/>
+            <a href="signup1.html">Sign Up Here</a>
+        </p>
+    </div>
+</div>
+
+<!-- Success popup -->
+<div class="popup" id="loginPopup">
+    <div class="popup-content">
+        <h3>Login Successful!</h3>
+        <p>Welcome back!</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<script>
+    // Function to display the success popup
+    function showPopup() {
+        document.getElementById('loginPopup').style.display = 'flex';
+    }
+
+    // Function to close the success popup
+    function closePopup() {
+        document.getElementById('loginPopup').style.display = 'none';
+        window.location.href = 'index5.html';
+    }
+
+    // Handle form submission
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        showPopup(); // Show success popup
+    });
+</script>
+
+</body>
+</html>

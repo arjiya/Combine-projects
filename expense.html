@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expenses</title>
+    <style>
+        /* General Reset */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Layout */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(to right, #f4f4f9, #e8ebf1);
+    color: #333;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Section */
+.input-section {
+    background-color: #fff;
+    padding: 25px;
+    margin: 0 auto 30px auto;
+    max-width: 550px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.input-section:hover {
+    transform: translateY(-5px);
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.input-section select,
+.input-section input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-section select:focus,
+.input-section input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.input-section button {
+    background: linear-gradient(to right, #27ae60, #2ecc71);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.input-section button:hover {
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Expenses List */
+.expenses-list {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.expenses-list h2 {
+    color: #34495e;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+th {
+    background-color: #2980b9;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+td {
+    color: #2c3e50;
+}
+
+tfoot td {
+    font-weight: bold;
+    background-color: #ecf0f1;
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: transparent;
+    color: #e74c3c;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+    color: #c0392b;
+    text-decoration: underline;
+}
+
+/* Total Amount */
+#total-amount {
+    color: #2ecc71;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Category Tables */
+.category-table {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.category-table:hover {
+    transform: translateY(-5px);
+}
+
+.category-table h3 {
+    color: #34495e;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.category-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.category-table th, .category-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.category-table th {
+    background-color: #2980b9;
+    color: white;
+}
+
+/* Button for Viewing Categories */
+#view-category-btn {
+    display: block;
+    margin: 20px auto;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#view-category-btn:hover {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    transform: translateY(-3px);
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Expense Tracker App</h1>
+    <div class="input-section">
+        <label for="category-select">Category:</label>
+        <select id="category-select">
+        <option value="Food">Food</option>
+        <option value="Rent">Rent</option>
+        <option value="Transportation">Transporatation</option>
+        <option value="Relaxing">Relaxing</option>
+    </select>
+    <label for="amount-input">Amount:</label>
+    <input type="number" id="amount-input">
+    <label for="date-input">Date:</label>
+    <input type="date" id="date-input">
+    <button id="add-btn">Add</button>
+    </div>
+    <div class="expenses-list">
+        <h2>Expenses List</h2>
+        <h2>View Expenses by Category</h2>
+        <button id="view-category-btn">View by Category</button>
+        <div class="category-expenses">
+            <div id="category-tables-container">
+                <!-- Dynamic tables for individual categories will be inserted here -->
+            </div>
+        </div>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date </th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="expense-table-body">
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total:</td>
+                    <td id="total-amount"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+
+   
+
+ 
+    <script src="expense.js"></script>
+</body>
+
+</html>

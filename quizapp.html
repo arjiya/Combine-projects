@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Quiz App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('quiz1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .quiz-container {
+      width: 90%;
+      max-width: 600px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      text-align: center;
+      background-color: lightblue;
+      color: black;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .question {
+      margin: 20px 0;
+    }
+    .options {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+    .options li {
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: hsl(253, 74%, 37%);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #08396db6;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>JavaScript Quiz</h1>
+    <div id="quiz">
+      <!-- Questions will be inserted dynamically -->
+    </div>
+    <button id="prev" class="hidden">Previous</button>
+    <button id="next">Next</button>
+    <button id="submit" class="hidden">Submit</button>
+  </div>
+
+  <script>
+    const quizData = [
+      { question: "What does DOM stand for?", options: ["Document Object Model", "Display Object Management", "Digital Ordinance Model", "Desktop Oriented Mode"], correct: 0 },
+      { question: "Which company developed JavaScript?", options: ["Microsoft", "Netscape", "Google", "Sun Microsystems"], correct: 1 },
+      { question: "Which symbol is used for comments in JavaScript?", options: ["//", "/* */", "#", "*"], correct: 0 },
+      { question: "What is the output of: '2' + 2?", options: ["4", "22", "NaN", "undefined"], correct: 1 },
+      { question: "Which method is used to parse a JSON string into a JavaScript object?", options: ["JSON.parse()", "JSON.stringify()", "JSON.objectify()", "JSON.convert()"], correct: 0 },
+      { question: "What is the result of typeof null?", options: ["null", "object", "undefined", "string"], correct: 1 },
+      { question: "Which JavaScript method is used to find the largest number in an array?", options: ["Math.max()", "Math.min()", "Array.max()", "Math.ceil()"], correct: 0 },
+      { question: "Which of the following is not a JavaScript data type?", options: ["String", "Number", "Float", "Boolean"], correct: 2 },
+      { question: "What is the output of Boolean('0') in JavaScript?", options: ["true", "false", "undefined", "null"], correct: 0 },
+      { question: "Which operator is used to assign a value to a variable?", options: ["=", "==", "===", "<-"] },
+    ];
+
+    const quizContainer = document.getElementById('quiz');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const submitButton = document.getElementById('submit');
+
+    let currentQuestion = 0;
+    const userAnswers = [];
+
+    function loadQuestion(index) {
+      quizContainer.innerHTML = '';
+      const data = quizData[index];
+      const questionElement = document.createElement('div');
+      questionElement.classList.add('question');
+      questionElement.innerHTML = `
+        <h3>${index + 1}. ${data.question}</h3>
+        <ul class="options">
+          ${data.options.map((option, i) => `
+            <li>
+              <label>
+                <input type="radio" name="question${index}" value="${i}" ${userAnswers[index] === i ? 'checked' : ''}> ${option}
+              </label>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+      quizContainer.appendChild(questionElement);
+
+      prevButton.classList.toggle('hidden', index === 0);
+      nextButton.classList.toggle('hidden', index === quizData.length - 1);
+      submitButton.classList.toggle('hidden', index !== quizData.length - 1);
+    }
+
+    function saveAnswer() {
+      const selectedOption = document.querySelector(`input[name="question${currentQuestion}"]:checked`);
+      userAnswers[currentQuestion] = selectedOption ? parseInt(selectedOption.value) : null;
+    }
+
+    function calculateResult() {
+      const resultData = quizData.map((data, index) => ({
+        question: data.question,
+        options: data.options,
+        correct: data.correct,
+        userAnswer: userAnswers[index]
+      }));
+      localStorage.setItem('quizResults', JSON.stringify(resultData));
+      window.location.href = 'result.html';
+    }
+
+    prevButton.addEventListener('click', () => {
+      saveAnswer();
+      currentQuestion--;
+      loadQuestion(currentQuestion);
+    });
+
+    nextButton.addEventListener('click', () => {
+      saveAnswer();
+      currentQuestion++;
+      loadQuestion(currentQuestion);
+    });
+
+    submitButton.addEventListener('click', () => {
+      saveAnswer();
+      calculateResult();
+    });
+
+    loadQuestion(currentQuestion);
+  </script>
+</body>
+</html>

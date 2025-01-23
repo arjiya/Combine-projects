@@ -1,0 +1,393 @@
+*{
+margin: 0;
+padding: 0;
+
+}
+.main{
+    width: 100;
+    background: linear-gradient(to top,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(1.jpg);
+    background-position: center;
+    background-size: cover;
+    height:100vh;
+}
+
+.navbar{
+    width: 1200px;
+    height:75px;
+    margin: auto;
+
+}
+
+.icon{
+    width: 200px;
+    float: left;
+    height:70px
+}
+
+.logo{
+    color:blueviolet;
+    font: size 35px; 
+    font-family: Arial;
+    padding-left: 20px;
+    float:left;
+    padding-top: 10px;
+}
+.menu{
+    width:400px;
+    float:left;
+    height:70px;
+
+}
+ul{
+    float:left;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 56px;
+    margin-top: 27px;
+    font-size: 15px;
+}
+ul li a{
+text-decoration: none;
+color: aliceblue;
+font-family: Arial;
+font-weight: bold;
+transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+color:orangered;
+}
+
+.srch{
+    font-family:'Times New Roman';
+    width:200px;
+    height:40px;
+    background:transparent;
+    border:1px solid orange;
+    margin-top:15px;
+    color:aliceblue;
+    border-right: none;
+    font-size: 16px;
+    float:left;
+    padding: 15px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-left:200px;
+
+
+}
+.btn{
+    width:200px;
+    height:40px;
+    background-color: orange;
+    border: 2px solid orange;
+    margin-top:15px;
+    color:white;
+    float:right;
+    font-size:15px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 250px;
+    
+
+    
+    
+}
+.btn:focus{
+    outline:none;
+
+}
+.srch:focus{
+    outline:none;
+}
+
+.content{
+    width:1200px;
+    height:auto;
+    margin:auto;
+    color:white;
+    position:relative;
+    margin-bottom: -200px;
+    float:left;
+
+
+}
+
+.content .par{
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 20px;
+
+}
+
+.content h1{
+    font-family: 'Times New Roman';
+    font-size:50px;
+    padding-left:20px;
+    margin-top: 9px;
+    letter-spacing: 2px;
+
+}
+
+.content .cn{
+    width:160px;
+    height:40px;
+    background: orangered;
+    border:none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.content .cn a{
+    text-decoration: none;
+    color:black;
+    transition: .3s ease;
+}
+
+.cn:hover{
+    background-color: aliceblue;
+}
+
+.content span{
+    color:orangered;
+    font-size: 60px;
+}
+
+.form{
+    width:250px;
+    height:380px;
+    background:linear-gradient(to top,rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    position: absolute;
+    top:50px;
+    left:950px;
+    border-radius:10px;
+    padding:25px;
+
+}
+.form h2{
+    width:220px;
+    font-family: sans-serif;
+    text-align: center;
+    color:orangered;
+    font-size: 20px;
+    background-color: aliceblue;
+    background-position: 10px;
+    margin: 2px;
+    padding:8px;
+
+}
+.form input{
+    width:240px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid orangered;
+    border-top:none;
+    border-right: none;
+    color:aliceblue;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: sans-serif;
+    transition:0.4s ease;
+
+
+}
+.form input focus{
+    outline: none;
+}
+::placeholder{
+    color: aliceblue;
+    font-family: Arial;
+
+}
+.btn{
+    width: 240px;
+    height:40px;
+    background: orangered;
+    border:none;
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor:pointer;
+    color:aliceblue;
+
+}
+.btn:hover{
+    background: white;
+    color:orangered;
+
+}
+.btn a{
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+
+}
+.form .link{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding-top: 20px;
+    text-align: center;
+
+}
+
+.form .link{
+    text-decoration: none;
+    color:orangered;
+
+}
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 109vh; /* Ensures the section takes full page height */
+    text-align: center;
+    margin-top: 10px;
+    padding: 0px;
+    background: linear-gradient(to top,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(125.jpg);
+    border-radius: 1px;
+    box-shadow: 0 4px 10px white;
+}
+
+/* #about Header Styling */
+#about h2 {
+    font-size: 36px;
+    color:white;
+    margin-bottom: 20px;
+}
+
+/* #about Paragraph Styling */
+#about p {
+    font-size: 18px;
+    color:white;
+    line-height: 1.6;
+    margin-top: 20px;
+    max-width: 800px; /* Limiting the width of text */
+    margin: 20px auto; /* Center the text */
+}
+.services {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    position: relative;
+    width: 30%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-item h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+
+@media screen and (max-width: 768px) {
+    .service-item {
+        width: 100%;
+    }
+}
+
+.footer {
+    background-image: url('14.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 100;
+   width: 1400px;
+    position: relative;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+ 
+}
+
+.footer h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  
+}
+
+.footer p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.footer ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.footer ul li {
+    font-size: 16px;
+    margin: 5px 0;
+   
+}
+
+.footer .social-links {
+    margin-top: 20px;
+}
+
+
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer h2 {
+        font-size: 24px;
+    }
+
+    .footer p {
+        font-size: 16px;
+    }
+
+    .footer ul li {
+        font-size: 14px;
+    }
+}
+

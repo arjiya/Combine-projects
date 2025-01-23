@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+        background-color: #c9c9c9;
+    }
+
+    .calculator {
+        display: inline-block;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+    }
+
+    .display {
+        width: 100%;
+        height: 60px;
+        font-size: 2em;
+        text-align: right;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        color: #333;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    button {
+        height: 60px;
+        font-size: 1.5em;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #e0e0e0;
+        color: #333;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+        background-color: #d4d4d4;
+        transform: translateY(-2px);
+    }
+
+    button:active {
+        background-color: #c9c9c9;
+        transform: translateY(0);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .operator {
+        background-color: #ffcc80;
+    }
+
+    .operator:hover {
+        background-color: #ffb74d;
+    }
+
+    .clear {
+        background-color: #ff867c;
+        color: #fff;
+    }
+
+    .clear:hover {
+        background-color: #ff5252;
+    }
+
+    .equals {
+        background-color: #81c784;
+        color: #fff;
+    }
+
+    .equals:hover {
+        background-color: #66bb6a;
+    }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" class="display" disabled>
+        <div class="buttons">
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="appendOperator('/')">/</button>
+ 
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="operator" onclick="appendOperator('*')">*</button>
+ 
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="operator" onclick="appendOperator('-')">-</button>
+ 
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button class="clear" onclick="clearDisplay()">AC</button>
+            <button class="operator" onclick="appendOperator('+')">+</button>
+ 
+            <button class="operator" onclick="calculateSquare()">x^</button>
+            <button class="equals" style="grid-column: span 3;" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+ 
+    <script>
+        let display = document.getElementById("display");
+ 
+        function appendNumber(number) {
+            display.value += number;
+        }
+ 
+        function appendOperator(operator) {
+            const lastChar = display.value[display.value.length - 1];
+            if ("+-*/".includes(lastChar)) {
+                display.value = display.value.slice(0, -1); // Replace the last operator
+            }
+            display.value += operator;
+        }
+ 
+        function clearDisplay() {
+            display.value = "";
+        }
+ 
+        function calculateResult() {
+            try {
+                display.value = eval(display.value); // Evaluate the expression
+            } catch (error) {
+                display.value = "Error"; // Handle invalid input
+            }
+        }
+ 
+        function calculateSquare() {
+            try {
+                let currentValue = parseFloat(display.value);
+                if (!isNaN(currentValue)) {
+                    display.value = currentValue ** 2; // Square the number
+                } else {
+                    display.value = "Error"; // Handle invalid input
+                }
+            } catch (error) {
+                display.value = "Error"; // Handle other errors
+            }
+        }
+    </script>
+</body>
+</html>
+ 

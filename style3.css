@@ -1,0 +1,151 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header Styling */
+header {
+    background: #6a5acd;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffdd57;
+}
+
+/* Section Styling */
+section {
+    padding: 2rem 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Home Page Styling */
+.container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.container p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Image Section */
+.image-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.image-section img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* About Page Styling */
+#about-content {
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+/* Projects Page Styling */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.project-item {
+    background: #f4f4f4;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 45%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-item:hover {
+    background: #e0e0ff;
+}
+
+/* Contact Page Styling */
+.contact-info {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.contact-info a {
+    color: #6a5acd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+
+
+    
+footer {
+    background: #333; 
+    color: white; /* White text color */
+    text-align: center; /* Center the text */
+    padding: 20px 20px; /* Padding for the content */
+    width: 100%; 
+    position: fixed;
+    bottom: 0; 
+    left: 0; 
+    z-index: 1000; 
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover {
+    text-decoration: underline;
+}

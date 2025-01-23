@@ -1,0 +1,126 @@
+*{
+    margin:0;
+    padding:0;
+   
+}
+
+span{
+color:blueviolet;
+margin:20px 580px;
+font-size: 2rem;
+font-size: large;
+top:20px;
+}
+.circlecontainer {
+    width: 150px;
+    height:150px;
+    display: flex;
+    background-color:grey;
+    align-items: left;
+    gap: 10px;
+    padding: 100px 200px;
+    margin-top:0%;
+    margin: 20px;
+    border-color: black;
+    align-items: center;
+    margin:20px 400px;
+
+    .circularimage{
+        position: absolute;
+        border-radius: 50%;
+        border:1px solid;
+        width:150px;
+        height:150px;
+
+      
+}
+
+}
+h2 {
+    position: absolute;
+    top:300px;
+    right:600px;
+    font-size: 1.2rem;
+    color:aliceblue;
+}
+p{
+   
+        display: block;
+        font-size: 1.2rem;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+    position: absolute;
+    top:320px;
+    right:490px; 
+    color:aliceblue;
+}
+
+h1{
+    display:flex;
+    color:aliceblue;
+    background-color: aqua;
+
+   
+}
+
+
+
+h1 {
+    font-size: 36px; /* Large font size for the title */
+    color: #2c3e50; /* Dark blue color */
+    text-align: center; /* Centered title */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e74c3c; /* Red accent underline */
+    padding-bottom: 10px;
+}
+
+/* Style for the subheading */
+h3 {
+    font-size: 24px; /* Medium font size for the subtitle */
+    color: #34495e; /* Slightly lighter dark blue */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style for the unordered list */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: square; /* Use square bullets */
+    padding-left: 20px; /* Indent for the list */
+}
+
+/* Style for list items */
+li {
+    font-size: 16px; /* Standard readable size */
+    line-height: 1.6; /* Improve readability with spacing */
+    margin-bottom: 10px; /* Space between list items */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px; /* Adjust title size for smaller screens */
+    }
+
+    h3 {
+        font-size: 20px; /* Adjust subtitle size */
+    }
+
+    li {
+        font-size: 14px; /* Smaller font for list items */
+    }
+}
+
+/* Group Selector */
+h1, h2, h3,p {
+    font-family: 'Arial', sans-serif;
+    color: #2c3e50;
+}
+
+
+

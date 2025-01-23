@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:white;
+}
+
+header {
+    background-color: #f8b6d2;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color:pink;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.container {
+    padding: 20px; 
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin:0 auto;
+}
+
+.product {
+    border: 5px solid pink;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0 20px;
+}
+.product button{
+    background-color: lightpink;
+    
+}
+.product button a{
+    color: black;
+    text-decoration: none;
+    
+    
+}
+
+.product img {
+    max-width: 100%;
+    height: 100px;
+    border-bottom: 0.5px solid pink;
+    padding-bottom: 10px;
+}
+.product img:hover {
+    transform: scale(1.3); /* Enlarges the image when hovered */
+    box-shadow: 0 0 20px rgba(248, 9, 121, 0.3); /* Adds a shadow effect when hovered */
+}
+.about {
+  
+    max-width: 1300px;
+    margin: 20px auto;
+    background-color: lightpink;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px pink;
+    height: 400px;
+
+
+ 
+    
+}
+.about h1, .about h2 {
+    color: black;
+    margin-bottom: 10px;
+   text-align: center;
+   font-size: 2rem;
+   font-weight: bold;
+   margin-left: 20px;
+   margin-bottom: 20px;
+
+}
+.about p {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.about ul {
+    padding-left: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #333;
+} 
+.about li {
+    margin-bottom: 10px;
+    color: #333;
+}
+/* General Styling for the Section */
+.visit {
+    padding: 20px;
+    max-width: 1300px;
+    background-color: lightpink;
+    color: black;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px pink;
+}
+.visit h2 {
+    font-size: 2rem;
+    color:black;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+.visit ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+}
+.visit li {
+    margin-bottom: 15px;
+}
+.visit li strong {
+    color: black;
+    font-weight: bold;
+}
+.visit p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.visit a {
+    color: pink;
+    text-decoration: none;
+    font-weight: bold;
+}
+.visit a:hover {
+    text-decoration: underline;
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .visit h2 {
+        font-size: 1.5rem;
+    }
+    .visit p {
+        font-size: 1rem;
+    }
+    .visit li {
+        font-size: 0.9rem;
+    }
+}
+
+footer {
+    background-color: lightpink;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    color: black;
+}
+.map {
+    margin-top: 30px;
+    height: 400px;
+    width:1300px;
+    box-shadow: 0 4px 8px pink;
+}
+

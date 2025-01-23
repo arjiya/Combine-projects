@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .result-container {
+      width: 90%;
+      max-width: 600px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      color: green;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li.correct {
+      color: green;
+      font-weight: bold;
+    }
+    li.incorrect {
+      color: red;
+      font-weight: bold;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: hsl(253, 74%, 37%);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #08396db6;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-container">
+    <h1>Quiz Results</h1>
+    <h2 id="score"></h2>
+    <div id="results"></div>
+    <button id="restart">Restart Quiz</button>
+  </div>
+
+  <script>
+    const results = JSON.parse(localStorage.getItem('quizResults')) || [];
+    const resultsContainer = document.getElementById('results');
+    const scoreContainer = document.getElementById('score');
+
+    let correctAnswers = 0;
+
+    results.forEach((result, index) => {
+      const userAnswer = result.userAnswer;
+      const isCorrect = userAnswer === result.correct;
+
+      if (isCorrect) correctAnswers++;
+
+      const questionHTML = `
+        <div>
+          <p><strong>Q${index + 1}: ${result.question}</strong></p>
+          <ul>
+            ${result.options.map((option, i) => `
+              <li class="${i === result.correct ? 'correct' : userAnswer === i ? 'incorrect' : ''}">
+                ${option}
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      `;
+      resultsContainer.innerHTML += questionHTML;
+    });
+
+    scoreContainer.textContent = `You got ${correctAnswers} out of ${results.length} correct!`;
+
+    document.getElementById('restart').addEventListener('click', () => {
+      localStorage.removeItem('quizResults');
+      window.location.href = 'quizapp.html';
+    });
+  </script>
+</body>
+</html>

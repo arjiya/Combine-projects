@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup Store</title>
+    <link rel="stylesheet" href="index6.css">
+    <script src="index8.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Makeup Store</h1>
+       
+    
+    </header>
+
+    <nav>
+        <a href="#products">Products</a>
+        <a href="#map">Find Us</a>
+        <a href="#about">About Us</a>
+    </nav>
+    
+    <div class="container">
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="m4.jpg" alt="Lipstick">
+                    <h3>Lipstick</h3>
+                    <p>This lipstick is a luxurious cosmetic product designed.<br>Price: Rs4500</p>
+                    <button onclick="showDescription('Added to Cart')">Add to Cart</button>
+                    <button>   <a href="#" class="view-button" onclick="redirectToLogin()">Buy Now</a></button>
+                </div>
+                <div class="product">
+                    <img src="m5.jpg" alt="Eyeshadow">
+                    <h3>Eyeshadow Palette</h3>
+                    <p>This eyeshadow palette is a must-have for any makeup.<br>Price: Rs2500</p>
+                    <button onclick="showDescription('Added to Cart')">Add to Cart</button>
+
+                    <button>   <a href="#" class="view-button" onclick="redirectToLogin()">Buy Now</a></button>
+                </div>
+                <div class="product">
+                    <img src="m10.jpg" alt="Blush">
+                    <h3>Blush</h3>
+                    <p>This blush is the perfect finishing touch to any makeup look <br>Price: Rs750</p>
+                    <button onclick="showDescription('Added to Cart')">Add to Cart</button>
+
+                    <button>   <a href="#" class="view-button" onclick="redirectToLogin()">Buy Now</a></button>
+                </div>
+                <div class="product">
+                    <img src="m2.jpg" alt="Lipstick">
+                    <h3>compact</h3>
+                    <p>This blush comes in a sleek, compact case. <br>Price: Rs4500</p>
+                    <button onclick="showDescription('Added to Cart')">Add to Cart</button>
+
+                    <button>   <a href="#" class="view-button" onclick="redirectToLogin()">Buy Now</a></button>
+                    
+                </div>
+            </div><br>
+
+            <div class="products">
+                <div class="product">
+                    <img src="m7.jpg" alt="Lipstick">
+                    <h3>powder</h3>
+                    <p>This ultra-fine, lightweight powder .<br>Price: Rs4500</p>
+                    <button onclick="showDescription('Added to Cart')">Add to Cart</button>
+
+                    <button>   <a href="#" class="view-button" onclick="redirectToLogin()">Buy Now</a></button>
+                   
+                   
+                </div>
+                <div class="product">
+                    <img src="m1.jpg" alt="Lipstick">
+                    <h3>compact</h3>
+                    <p>This compact is a versatile and essential makeup. <br>Price: Rs4500</p>
+                    <button onclick="showDescription('Added to Cart')">Add to Cart</button>
+
+                
+                    <button> <a href="#" class="view-button" onclick="redirectToLogin()">Buy Now</a></button>
+
+                </div>
+                <div class="product">
+                    <img src="m6.jpg" alt="Eyeshadow">
+                    <h3>mascara</h3>
+                    <p>This mascara is a must-have beauty essential designed.<br>Price: Rs2500</p>
+                    <button class="button" onclick="showDescription('Added to Cart')">Add to Cart</button>
+                   
+                    <button class="button">   <a href="#" class="view-button" onclick="redirectToLogin()">Buy Now</a></button>
+                </div>
+                <div class="product">
+                    <img src="m8.jpg" alt="Blush">
+                    <h3>shampoo</h3>
+                    <p>The shampoo is formulated with a mild cleansing.<br>Price: Rs750</p>
+                    <button onclick="showDescription('Added to Cart')">Add to Cart</button>
+
+                    <button>   <a href="#" class="view-button" onclick="redirectToLogin()">Buy Now</a></button>
+                 
+                </div>
+            </div>
+        </section>
+
+              
+              
+           
+
+           
+<script>
+    function redirectToLogin(){
+        window.location.href="signup1.html"
+    }
+    function redirectToDescription() {
+        window.location.href = "product-description.html";
+    }
+    function showDescription(productName) {
+    // You can either show a simple alert or display the description in a modal
+    alert(`Product: ${productName}`);
+}
+</script>
+           
+
+        <section id="about" class="about">
+            <h1>About Us</h1>
+        <p>Welcome to Glamour Haven, your one-stop destination for all things makeup and beauty!  
+        At Glamour Haven, we believe that makeup is more than just products—it's an expression of individuality, confidence, and creativity. Our mission is to empower beauty enthusiasts around the world by providing them with high-quality, trendy, and affordable makeup products that cater to every skin tone, type, and style.</p>
+        <h2>What We Offer</h2>
+        <ul>
+            <li>Skincare Essentials: Because we know that a healthy glow starts with great skin, we also stock a variety of skincare must-haves.</li>
+            <li>Expert Advice: Our blog and tutorials guide you in selecting the perfect shades, techniques, and routines.</li>
+        </ul>
+        </section>
+        <section id="visit" class="visit">
+           
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li><strong>Quality You Can Trust:</strong> All of our products undergo strict quality control to ensure they meet the highest standards of safety and performance.</li>
+            <li><strong>Affordable Prices:</strong> We believe that beauty should be accessible to everyone, which is why we offer competitive pricing on all of our products.</li>
+            <li><strong>Inclusive Range:</strong> Our products cater to all skin tones, types, and personal preferences. No matter your background, we have something for you.</li>
+            <li><strong>Exceptional Customer Service:</strong> Our team is always ready to assist you, answer your questions, and provide recommendations based on your needs.</li>
+        </ul>
+    
+        <h2>Our Story</h2>
+        <p>Founded with a passion for beauty, Makeup Store started as a small local shop and has since grown into a global online destination for beauty products. Our journey is driven by our commitment to innovation, inclusivity, and the celebration of beauty in all its forms. We continuously expand our product range to offer the latest and best in beauty, ensuring that every customer has access to the tools and products needed to enhance their natural beauty.</p>
+    
+        <h2>Get In Touch</h2>
+        <p>If you have any questions, or need product recommendations, or simply want to chat about the latest beauty trends, feel free to reach out to us! We’d love to hear from you.</p>
+       
+        </section>
+
+        <section id="map">
+            <h2>Find Us</h2>
+            <iframe
+                class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56526.90883718761!2d85.28536228676117!3d27.68850260938803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a98a1492b%3A0xe07b8c3187d9962b!2sGlam%20Art%20Makeup%20Studio%20%26%20Beauty%20Academy!5e0!3m2!1sen!2snp!4v1735736384443!5m2!1sen!2snp">
+                height="300"
+              
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>Contact Us:</strong></p>
+        <p>Email: support@makeupstore.com</p>
+        <p>Phone: 9812546322</p>
+        <p>Address: 123 Glam Art Makeup studio Fashion City</p>
+
+    </footer>
+</body>
+</html>

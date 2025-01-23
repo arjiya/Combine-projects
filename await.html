@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async/Await Example</title>
+</head>
+<body>
+    <div id="message">Welcome</div>
+    <script>
+        function fetchMessage() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("hi i m arjiya khatri");
+                }, 2000);
+            });
+        }
+
+        async function displayMessage() {
+            const message = await fetchMessage();
+            document.getElementById('message').textContent = message;
+        }
+
+        displayMessage();
+    </script>
+</body>
+</html>
