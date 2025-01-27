@@ -12,18 +12,23 @@ const email_error = document.getElementById('email_error');
 const password_error = document.getElementById("password_error");
 const confirmpassword_error = document.getElementById("confirmpassword_error");
 const confirmpassword_match = document.getElementById("confirmpassword_match");
-const submitButton = document.querySelector('.btn');
 const popup = document.querySelector('.popup');
 const okButton = popup.querySelector('button');
 
+let isToggleClicked = false;
+
 form.addEventListener('submit', (e) => {
-    e.preventDefault();  
+    e.preventDefault();
+
+    if (isToggleClicked) {
+        isToggleClicked = false;
+        return;
+    }
 
     var email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let isValid = true;  
+    let isValid = true;
 
- 
-    if (name.value === '' || name.value == null) { 
+    if (name.value === '' || name.value == null) {
         name_error.innerHTML = "Name is required";
         name_error.style.color = "red";
         isValid = false;
@@ -61,29 +66,36 @@ form.addEventListener('submit', (e) => {
         confirmpassword_match.style.color = "green";
     }
 
-
     if (isValid) {
+        popup.querySelector('p').textContent = "THANK YOU. Your details have been submitted.";
         popup.style.display = 'block';
     }
 });
 
-
 togglePassword.addEventListener('click', (e) => {
+    isToggleClicked = true;
     const isPassword = passwordInput.type === 'password';
     passwordInput.type = isPassword ? 'text' : 'password';
     togglePassword.textContent = isPassword ? 'Hide' : 'Show';
-    e.stopPropagation(); 
+    e.stopPropagation();
 });
 
 toggleconfirmPassword.addEventListener('click', (e) => {
+    isToggleClicked = true;
     const isConfirmPassword = confirmpasswordInput.type === 'password';
     confirmpasswordInput.type = isConfirmPassword ? 'text' : 'password';
     toggleconfirmPassword.textContent = isConfirmPassword ? 'Hide' : 'Show';
-    e.stopPropagation(); 
+    e.stopPropagation();
 });
 
 okButton.addEventListener('click', () => {
     popup.style.display = 'none';
+    form.reset();
+    name_error.innerHTML = '';
+    email_error.innerHTML = '';
+    password_error.innerHTML = '';
+    confirmpassword_error.innerHTML = '';
+    confirmpassword_match.innerHTML = '';
 });
 
 popup.style.display = 'none';

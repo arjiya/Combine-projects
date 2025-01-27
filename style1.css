@@ -15,7 +15,8 @@ padding: 0;
     width: 1200px;
     height:75px;
     margin: auto;
-
+   
+    
 }
 
 .icon{
@@ -32,12 +33,19 @@ padding: 0;
     float:left;
     padding-top: 10px;
 }
-.menu{
-    width:400px;
-    float:left;
-    height:70px;
 
-}
+    .menu {
+        display: flex;
+        width: auto; 
+        height: 70px;
+        align-items: center;
+        justify-content: flex-end; 
+        margin-left:400px; 
+        position: fixed; 
+    }
+    
+
+
 ul{
     float:left;
     display:flex;
@@ -63,30 +71,32 @@ ul li a:hover{
 color:orangered;
 }
 
-.srch{
-    font-family:'Times New Roman';
-    width:200px;
-    height:40px;
-    background:transparent;
-    border:1px solid orange;
-    margin-top:15px;
-    color:aliceblue;
-    border-right: none;
+.srch {
+    font-family: 'Times New Roman';
+    width: 300px; 
+    height: 40px;
+    background: transparent;
+    border: 1px solid orange;
+    margin-top: 27px;
+    color: aliceblue;
     font-size: 16px;
-    float:left;
-    padding: 15px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    margin-left:200px;
-
+    padding: 10px 40px 10px 15px; 
+    border-radius: 5px; 
+    margin-left: 700px; 
+    position: relative;
+    box-sizing: border-box;
 
 }
+
+
+
+
 .btn{
     width:200px;
     height:40px;
     background-color: orange;
     border: 2px solid orange;
-    margin-top:15px;
+    margin-top:40px;
     color:white;
     float:right;
     font-size:15px;
@@ -166,8 +176,8 @@ color:orangered;
     height:380px;
     background:linear-gradient(to top,rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
     position: absolute;
-    top:50px;
-    left:950px;
+    top:20px;
+    left:900px;
     border-radius:10px;
     padding:25px;
 
@@ -372,7 +382,7 @@ color:orangered;
 
 
 
-/* Responsive Design */
+
 @media screen and (max-width: 768px) {
     .footer {
         padding: 20px 0;

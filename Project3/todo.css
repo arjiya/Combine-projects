@@ -49,61 +49,21 @@ body {
     background: #1e1e1e;
   }
   
-  .navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
   
-  .navbar .nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar .nav-links li {
-    display: inline;
-  }
-  
-  .navbar .nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .navbar .nav-links a:hover {
-    color: #bb86fc;
-  }
-  
-  .navbar button {
-    background: white;
-    color: #6200ea;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .navbar button:hover {
-    background: #eeeeee;
-  }
-  
-  /* Header */
   header {
     text-align: center;
     margin: 20px 0;
   }
  
-  
-  /* Board and Columns */
+ 
   .board {
     display: flex;
     justify-content: space-around;
     margin: 20px;
     margin-left: 50px;
     margin-right: 50px;
-    border-radius: 90px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   
+    
     
   }
 
@@ -260,7 +220,7 @@ body {
   form input,
   form textarea,
   form button {
-    width: 100%;
+    width: 95%;
     margin: 10px 0;
     padding: 10px;
     border: none;
