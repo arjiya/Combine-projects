@@ -260,7 +260,7 @@ color:orangered;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 109vh; /* Ensures the section takes full page height */
+    min-height: 109vh;
     text-align: center;
     margin-top: 10px;
     padding: 0px;
@@ -269,7 +269,7 @@ color:orangered;
     box-shadow: 0 4px 10px white;
 }
 
-/* #about Header Styling */
+
 #about h2 {
     font-size: 36px;
     color:white;

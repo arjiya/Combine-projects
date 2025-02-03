@@ -6,12 +6,10 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="style1.css">
     <style>
-        /* Style for the success popup */
         .popup {
-            display: none; /* Hidden by default */
-            position: fixed;
-            left: 0;
-            top: 0;
+            display: none; 
+            left: 500px;
+            top: 20px;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
@@ -53,11 +51,10 @@
             <button class="btn" type="submit">Sign Up</button>
         </form>
         <p class="link">Already have an account? <br/>
-        <a href="index1.html">Login Here</a></p>
+        <a href="index1 copy.html">Login Here</a></p>
     </div>
 </div>
 
-<!-- Success popup -->
 <div class="popup" id="successPopup">
     <div class="popup-content">
         <h3>Registration Successful!</h3>
@@ -67,20 +64,17 @@
 </div>
 
 <script>
-    // Function to display the success popup
     function showPopup() {
         document.getElementById('successPopup').style.display = 'flex';
     }
 
-    // Function to close the success popup
     function closePopup() {
         document.getElementById('successPopup').style.display = 'none';
     }
 
-    // Handle form submission
     document.getElementById('signupForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent  from actually submitting
-        showPopup(); // Show the success popup
+        event.preventDefault();
+        showPopup();
     });
 </script>
 

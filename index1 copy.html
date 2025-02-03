@@ -6,14 +6,11 @@
     <title>WebPage Design</title>
     <link rel="stylesheet" href="style1.css">
     <script>
-        
-        function isValidPassword(password) {
+          function isValidPassword(password) {
             const passwordPattern =
                 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
             return passwordPattern.test(password);
         }
-
-     
         function validateLoginForm() {
             const email = document.querySelector('input[name="email"]');
             const password = document.querySelector('input[name="password"]');
@@ -23,7 +20,6 @@
                 email.focus();
                 return false;
             }
-
             if (!/\S+@\S+\.\S+/.test(email.value)) {
                 alert("Please enter a valid email.");
                 email.focus();
@@ -122,7 +118,8 @@
                 <button type="submit" class="btn">Login</button>
             </form>
             <p class="link">Don't have an account?<br />
-                <a href="#signup">Sign Up Here</a>
+                <a href="signup.html#signup">Sign Up Here</a>
+
             </p>
         </div>
     </div>
@@ -150,27 +147,19 @@
         <h3>SEO Services</h3>
     </div>
 </div>
-<footer class="footer" id="contact">
-    <div id="container" class="container">
+
+
+<div class="footer">
+    <div class="container">
         <h2>Contact Us</h2>
-        <p>If you have any questions or need assistance, feel free to reach out to us. We’re here to help!</p>
-        <ul>
-            <li>Email: arjiyakha56@gmail.com</li>
-            <li>9852147</li>
-            <li>Bhaktapur</li>
+        <p>If you have any questions or need assistance, feel free to reach out to us!</p>
+        <ul class="contact-info">
+            <li>Email: arjiyakhatri082@gmail.com</li>
+            <li>Phone: 9813893283</li>
+            <li>Address: Bhaktapur,Nepal</li>
         </ul>
     </div>
-</footer>
-
-<!-- Sign-Up Form Section -->
-<div id="signup" class="form">
-    <h2>Sign Up Here</h2>
-    <form onsubmit="return validateSignUpForm();">
-        <input type="email" id="signupEmail" placeholder="Enter email here">
-        <input type="password" id="signupPassword" placeholder="Enter password here">
-        <input type="password" id="confirmPassword" placeholder="Confirm password">
-        <button type="submit" class="btn">Sign Up</button>
-    </form>
+</div>
 </div>
 </body>
 </html>

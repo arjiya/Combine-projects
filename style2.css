@@ -1,41 +1,45 @@
 *{
     margin:0;
     padding:0;
-
+    
 }
 
 .main{
-    width: 100;
+    width: 100%;
     background: url(1234.jpg);
     background-position: center;
     background-size: cover;
     height:109vh;
     font-family: sans-serif;
 }
+
 .navbar{
-    width:86%;
-    display:flex;
-    margin:auto;
+    width:100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
     padding:15px;
     align-items: center;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 950;
 }
+
 .navbar .logo{
-    width: 160px;
+    width: 52px;
     cursor:pointer;
-    margin-top: -3%;
-    margin-left:-2%;
-
-
 }
 
 ul{
-margin-top: -4px;
+    margin-top: -4px;
 }
+
 ul li {
-list-style: none;
-display: inline-block;
-padding:10px 16px;
+    list-style: none;
+    display: inline-block;
+    padding:10px 16px;
+    margin-right: 40px;
 }
 
 ul li a{
@@ -45,51 +49,53 @@ ul li a{
     color:white;
     margin-top: -3%;
     transition: .4s ease;
-
 }
+
 ul li a:hover{
     color:orangered;
-    }
-    
-
 }
+
 .info{
     margin-left:7%;
     margin-top:6%;
 }
+
 .info h1{
     font-size:65px;
     color:orangered;
     margin-left: 5%;
-
 }
-
+.info h2{
+    font-size:25px;
+    color:orangered;
+    margin-left: 5%;
+    margin-top: 50px;
+}
 .info h3{
+    margin-top: 40px;
     font-size: 18px;
     letter-spacing: 1px;
     line-height: 24px;
     color:aliceblue;
     margin-left: 5%;
-
 }
-.info span{
-    color:orangered(230,104,59);
-    
 
+.info span{
+    color:orangered;
 }
 
 .info a{
     text-decoration: none;
     color:aliceblue;
-    background: black(36,32,30);
+    background: black;
     margin: 26px 0;
     padding: 10px 18px;
     border-radius: 10px;
     display: inline-block;
     transition: .4s ease;
     margin-left: 5%;
-
 }
+
 .info a:hover{
     background: rgb(59,174,209);
 }
@@ -97,8 +103,8 @@ ul li a:hover{
 .profile-pic {
     position: absolute;
     top: 50%;
-    right: 30px; /* Adjust to your preferred spacing from the right edge */
-    transform: translateY(-50%); /* Centers the image vertically */
+    right: 30px; 
+    transform: translateY(-50%); 
 }
 
 .profile-pic img {
@@ -123,17 +129,18 @@ ul li a:hover{
 
 #home p {
     font-size: 18px;
-    color: #555;
+    color: white;
     line-height: 1.5;
     margin-top: 20px;
 }
+
 #about {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100vh; /* Ensures the section takes full page height */
+    min-height: 100vh;
     text-align: center;
     margin-top: 80px;
     padding: 40px;
@@ -142,168 +149,144 @@ ul li a:hover{
     box-shadow: 0 4px 10px white;
 }
 
-/* #about Header Styling */
 #about h2 {
     font-size: 36px;
     color:white;
     margin-bottom: 20px;
 }
 
-/* #about Paragraph Styling */
 #about p {
     font-size: 18px;
     color:white;
     line-height: 1.6;
     margin-top: 20px;
-    max-width: 800px; /* Limiting the width of text */
-    margin: 20px auto; /* Center the text */
+    max-width: 800px;
+    margin: 20px auto;
 }
+
 #skills {
     padding: 100px 180px;
     text-align: center;
     background-color: #fff;
-    margin: 0; /* Remove margin for full-page effect */
+    margin: 0;
     width: 100%;
-    height: 100vh; /* Make the section fill the viewport height */
+    height: 100vh;
     max-width: 1000px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background: url(1234.jpg) no-repeat center center/cover; /* Full background image */
+    background: url(1234.jpg) no-repeat center center/cover;
     position: relative;
-    z-index: 1; /* Ensure content is on top of background */
+    z-index: 1;
     color:orangered;
 }
 
-/* Heading and Paragraph Styling */
 #skills h2 {
     font-size: 36px;
-    color: #fff; /* White text for contrast */
+    color: #fff;
     margin-bottom: 20px;
     z-index: 2;
 }
 
 #skills p {
     font-size: 18px;
-    color: #f0f0f0; /* Lighter text color */
+    color: #f0f0f0;
     margin-bottom: 40px;
     z-index: 2;
 }
 
-/* Container for Skill Items */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    z-index: 2;
-    position: relative;
+    gap: 30px;
 }
 
-/* Individual Skill Item */
 .skill-item {
-    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 2;
+    text-align: left;
 }
 
 .skill-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
 }
 
 .progress-bar {
-    background-color: #e0e0e0;
-    height: 10px;
+    width: 100%;
+    background-color: #f3f3f3;
+    height: 6px;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 .progress {
     height: 100%;
     border-radius: 5px;
-    transition: width 0.5s ease-in-out;
 }
 
-/* Skill Progress Bars */
-.html { width: 90%; background-color: #f44336; }
-.css { width: 85%; background-color: #2196F3; }
-.js { width: 80%; background-color: #FFEB3B; }
-.react { width: 75%; background-color: #4CAF50; }
-.python { width: 70%; background-color: #9C27B0; }
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-
-    #skills {
-        padding: 30px 15px; /* Adjust padding for smaller screens */
-    }
-
-    #skills h2 {
-        font-size: 28px;
-    }
-
-    #skills p {
-        font-size: 16px;
-    }
+.html {
+    width: 85%;
+    background-color: #e44d26;
 }
-#contact {
-    padding: 140px 180px;
-    background-color: #ffffff;
+
+.css {
+    width: 90%;
+    background-color: #264de4;
+}
+
+.js {
+    width: 80%;
+    background-color: #f0db4f;
+}
+
+.react {
+    width: 75%;
+    background-color: #61dafb;
+}
+
+.python {
+    width: 70%;
+    background-color: #3776ab;
+}
+
+.contact-container {
     width: 100%;
-    max-width: 1000px;
-    margin: 0px auto;
+    padding: 40px;
+    background: url(1234.jpg);  /* Same as About section */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background: url(1234.jpg);
+    box-shadow: 0 4px 10px white;
 }
-
-/* Contact Heading */
-#contact h2 {
-    font-size: 36px;
+.contact-container h2, p{
     color:white;
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-left: 125px;
+    margin-bottom: 30px;
 }
 
-/* Contact Description */
-#contact p {
-    font-size: 18px;
-    color:white;
-    margin-bottom: 40px;
-}
-
-/* Contact Form Styling */
 .contact-form {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color:black;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Form Group */
-.contact-form .form-group {
-    width: 100%;
-    margin-bottom: 20px;
-    color: white;
-}
-
-/* Form Label */
-.contact-form label {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 5px;
     color:white;
 }
 
-/* Form Input, Textarea, Select Styling */
+.contact-form .form-group {
+    margin-bottom: 20px;
+    width: 80%;
+    color:white;
+    
+}
+
+.contact-form label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color:white;
+}
+
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
@@ -311,60 +294,21 @@ ul li a:hover{
     padding: 12px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+    color:white;
 }
 
-.contact-form textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.contact-form input[type="radio"] {
-    display: inline-block;
-    margin-right: 10px;
- 
-}
-
-/* Submit Button Styling */
-.submit-btn {
+.contact-form button {
     background-color: #28a745;
-    color: #fff;
-    padding: 12px 20px;
+    color: white;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
-    font-size: 18px;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.submit-btn:hover {
+.contact-form button:hover {
     background-color: #218838;
-}
-
-/* Form Styling on Mobile */
-@media (max-width: 768px) {
-    .contact-form {
-        width: 90%;
-    }
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: white;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    color: #f0f0f0;
 }

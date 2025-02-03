@@ -134,7 +134,7 @@
         function appendOperator(operator) {
             const lastChar = display.value[display.value.length - 1];
             if ("+-*/".includes(lastChar)) {
-                display.value = display.value.slice(0, -1); // Replace the last operator
+                display.value = display.value.slice(0, -1); 
             }
             display.value += operator;
         }
@@ -145,9 +145,9 @@
  
         function calculateResult() {
             try {
-                display.value = eval(display.value); // Evaluate the expression
+                display.value = eval(display.value); 
             } catch (error) {
-                display.value = "Error"; // Handle invalid input
+                display.value = "Error";
             }
         }
  
@@ -155,12 +155,12 @@
             try {
                 let currentValue = parseFloat(display.value);
                 if (!isNaN(currentValue)) {
-                    display.value = currentValue ** 2; // Square the number
+                    display.value = currentValue ** 2; 
                 } else {
-                    display.value = "Error"; // Handle invalid input
+                    display.value = "Error"; 
                 }
             } catch (error) {
-                display.value = "Error"; // Handle other errors
+                display.value = "Error";
             }
         }
     </script>

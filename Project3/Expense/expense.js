@@ -60,7 +60,7 @@ addBtn.addEventListener('click', function() {
     deleteCell.appendChild(deleteBtn);
 });
 
-// Optional: If you want to load any initial expenses on page load, you can use this code:
+
 for (const expense of expenses) {
     totalAmount += expense.amount;
     totalAmountCell.textContent = totalAmount;
@@ -90,10 +90,10 @@ const viewCategoryBtn = document.getElementById('view-category-btn');
 const categoryTablesContainer = document.getElementById('category-tables-container');
 
 viewCategoryBtn.addEventListener('click', function () {
-    // Clear previous tables
+   
     categoryTablesContainer.innerHTML = '';
 
-    // Group expenses by category
+   
     const expensesByCategory = expenses.reduce((acc, expense) => {
         if (!acc[expense.category]) {
             acc[expense.category] = [];
@@ -102,14 +102,13 @@ viewCategoryBtn.addEventListener('click', function () {
         return acc;
     }, {});
 
-    // Create a table for each category
     for (const [category, categoryExpenses] of Object.entries(expensesByCategory)) {
-        // Create a container for each category
+        
         const categoryDiv = document.createElement('div');
         categoryDiv.classList.add('category-table');
         categoryDiv.innerHTML = `<h3>${category}</h3>`;
         
-        // Create the table
+        
         const table = document.createElement('table');
         table.innerHTML = `
             <thead>
@@ -128,7 +127,7 @@ viewCategoryBtn.addEventListener('click', function () {
         `;
         categoryDiv.appendChild(table);
 
-        // Append the category container to the main container
+     
         categoryTablesContainer.appendChild(categoryDiv);
     }
 });
@@ -145,10 +144,10 @@ const viewCategoryBtn = document.getElementById('view-category-btn');
 const categoryTablesContainer = document.getElementById('category-tables-container');
 
 viewCategoryBtn.addEventListener('click', function () {
-    // Clear previous tables
+  
     categoryTablesContainer.innerHTML = '';
 
-    // Group expenses by category
+
     const expensesByCategory = expenses.reduce((acc, expense) => {
         if (!acc[expense.category]) {
             acc[expense.category] = [];
@@ -157,14 +156,14 @@ viewCategoryBtn.addEventListener('click', function () {
         return acc;
     }, {});
 
-    // Create a table for each category
+  
     for (const [category, categoryExpenses] of Object.entries(expensesByCategory)) {
-        // Create a container for each category
+        
         const categoryDiv = document.createElement('div');
         categoryDiv.classList.add('category-table');
         categoryDiv.innerHTML = `<h3>${category}</h3>`;
         
-        // Create the table
+      
         const table = document.createElement('table');
         table.innerHTML = `
             <thead>
