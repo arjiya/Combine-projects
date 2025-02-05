@@ -36,13 +36,32 @@
       list-style: none;
       padding: 0;
     }
+    li.correct, li.incorrect {
+      font-weight: bold;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
     li.correct {
       color: green;
-      font-weight: bold;
+      background-color: #dff0d8;
     }
     li.incorrect {
       color: red;
-      font-weight: bold;
+      background-color: #f2dede;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background-color 0.3s;
+    }
+    li:hover {
+      background-color: #e2e2e2;
     }
     button {
       display: block;

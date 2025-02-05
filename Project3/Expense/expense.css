@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.expense-tracker {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 2px solid #444;
+    color: #fff;
+}
+
+.expense-tracker h1, .expense-tracker h2 {
+    font-size: 1.5em;
+    color: #ee5151;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input, select, button {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1em;
+    outline: none;
+}
+
+input, select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+button {
+    background-color: #ee5151;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #d44141;
+    transform: scale(1.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #444;
+    color: #ee5151;
+}
+
+td {
+    background-color: #333;
+    color: #fff;
+}
+
+#toggle-expenses-btn, #total-expenses-btn {
+    background-color: #444;
+    margin: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#toggle-expenses-btn:hover, #total-expenses-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+#total-expenses-display {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #ee5151;
+    font-weight: bold;
+}

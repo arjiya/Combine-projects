@@ -41,8 +41,17 @@
       padding: 0;
       text-align: left;
     }
-    .options li {
+    .option-box {
+      padding: 10px;
       margin: 10px 0;
+      border: 2px solid #333;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #f9f9f9;
+      transition: background-color 0.3s;
+    }
+    .option-box:hover, .selected {
+      background-color: #ddd;
     }
     button {
       padding: 10px 20px;
@@ -65,26 +74,24 @@
 <body>
   <div class="quiz-container">
     <h1>JavaScript Quiz</h1>
-    <div id="quiz">
-      <!-- Questions will be inserted dynamically -->
-    </div>
+    <div id="quiz"></div>
     <button id="prev" class="hidden">Previous</button>
     <button id="next">Next</button>
     <button id="submit" class="hidden">Submit</button>
   </div>
 
   <script>
-    const quizData = [
-      { question: "What does DOM stand for?", options: ["Document Object Model", "Display Object Management", "Digital Ordinance Model", "Desktop Oriented Mode"], correct: 0 },
-      { question: "Which company developed JavaScript?", options: ["Microsoft", "Netscape", "Google", "Sun Microsystems"], correct: 1 },
-      { question: "Which symbol is used for comments in JavaScript?", options: ["//", "/* */", "#", "*"], correct: 0 },
-      { question: "What is the output of: '2' + 2?", options: ["4", "22", "NaN", "undefined"], correct: 1 },
-      { question: "Which method is used to parse a JSON string into a JavaScript object?", options: ["JSON.parse()", "JSON.stringify()", "JSON.objectify()", "JSON.convert()"], correct: 0 },
-      { question: "What is the result of typeof null?", options: ["null", "object", "undefined", "string"], correct: 1 },
-      { question: "Which JavaScript method is used to find the largest number in an array?", options: ["Math.max()", "Math.min()", "Array.max()", "Math.ceil()"], correct: 0 },
-      { question: "Which of the following is not a JavaScript data type?", options: ["String", "Number", "Float", "Boolean"], correct: 2 },
-      { question: "What is the output of Boolean('0') in JavaScript?", options: ["true", "false", "undefined", "null"], correct: 0 },
+     const quizData = [
+     
       { question: "Which operator is used to assign a value to a variable?", options: ["=", "==", "===", "<-"] },
+      { question: "Which keyword is used to declare a variable in JavaScript?", options: ["var", "let", "const", "All of the above"], correct: 3 },
+      { question: "Which function is used to convert a string to an integer in JavaScript?", options: ["parseInt()", "toInteger()", "parseFloat()", "Number()"], correct: 0 },
+      { question: "What will console.log(typeof NaN); output?", options: ["number", "NaN", "undefined", "object"], correct: 0 },
+      { question: "Which method removes the last element from an array and returns it?", options: ["pop()", "shift()", "splice()", "delete()"], correct: 0 },
+      { question: "What will be the output of Boolean([]) in JavaScript?", options: ["true", "false", "undefined", "null"], correct: 0 },
+      { question: "Which of the following is NOT a looping structure in JavaScript?", options: ["for", "while", "do-while", "repeat-until"], correct: 3 },
+      { question: "Which operator is used to check both value and type in JavaScript?", options: ["==", "===", "!=", "!=="], correct: 1 },
+      { question: "What will be the output of console.log(3 + '3');?", options: ["6", "'6'", "'33'", "Error"], correct: 2 }
     ];
 
     const quizContainer = document.getElementById('quiz');
@@ -100,28 +107,33 @@
       const data = quizData[index];
       const questionElement = document.createElement('div');
       questionElement.classList.add('question');
-      questionElement.innerHTML = `
-        <h3>${index + 1}. ${data.question}</h3>
-        <ul class="options">
-          ${data.options.map((option, i) => `
-            <li>
-              <label>
-                <input type="radio" name="question${index}" value="${i}" ${userAnswers[index] === i ? 'checked' : ''}> ${option}
-              </label>
-            </li>
-          `).join('')}
-        </ul>
-      `;
+      questionElement.innerHTML = `<h3>${index + 1}. ${data.question}</h3>`;
+      
+      const optionsList = document.createElement('ul');
+      optionsList.classList.add('options');
+      
+      data.options.forEach((option, i) => {
+        const optionBox = document.createElement('li');
+        optionBox.classList.add('option-box');
+        optionBox.textContent = option;
+        optionBox.dataset.index = i;
+        if (userAnswers[index] === i) optionBox.classList.add('selected');
+        optionBox.addEventListener('click', () => selectAnswer(index, i));
+        optionsList.appendChild(optionBox);
+      });
+      
+      questionElement.appendChild(optionsList);
       quizContainer.appendChild(questionElement);
-
+      
       prevButton.classList.toggle('hidden', index === 0);
       nextButton.classList.toggle('hidden', index === quizData.length - 1);
       submitButton.classList.toggle('hidden', index !== quizData.length - 1);
     }
 
-    function saveAnswer() {
-      const selectedOption = document.querySelector(`input[name="question${currentQuestion}"]:checked`);
-      userAnswers[currentQuestion] = selectedOption ? parseInt(selectedOption.value) : null;
+    function selectAnswer(questionIndex, optionIndex) {
+      userAnswers[questionIndex] = optionIndex;
+      document.querySelectorAll('.option-box').forEach(box => box.classList.remove('selected'));
+      document.querySelectorAll('.option-box')[optionIndex].classList.add('selected');
     }
 
     function calculateResult() {
@@ -136,21 +148,16 @@
     }
 
     prevButton.addEventListener('click', () => {
-      saveAnswer();
       currentQuestion--;
       loadQuestion(currentQuestion);
     });
 
     nextButton.addEventListener('click', () => {
-      saveAnswer();
       currentQuestion++;
       loadQuestion(currentQuestion);
     });
 
-    submitButton.addEventListener('click', () => {
-      saveAnswer();
-      calculateResult();
-    });
+    submitButton.addEventListener('click', calculateResult);
 
     loadQuestion(currentQuestion);
   </script>
